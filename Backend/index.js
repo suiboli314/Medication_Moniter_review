@@ -1,8 +1,12 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+const { MongoClient } = require("mongodb")
 
 const app = express()
 const port = 3000
+const uri =
+    "mongodb+srv://<username>:<password>@cluster0.2b2dd.mongodb.net/?retryWrites=true&w=majority"
+const client = new MongoClient(uri)
 
 const queryRoutes = require("./routes/query-routes")
 const monitorRoutes = require("./routes/monitor-routes")

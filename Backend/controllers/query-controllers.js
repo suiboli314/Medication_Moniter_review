@@ -24,6 +24,18 @@ const DUMMY_MEDICATION = [
         manufactor: "def",
         stock: 0,
     },
+    {
+        id: "1234567",
+        name: "amoxicillin",
+        manufactor: "ghi",
+        stock: 5,
+    },
+    {
+        id: "7654321",
+        name: "aspirin",
+        manufactor: "xyz",
+        stock: 2,
+    },
 ]
 
 exports.queryMedication = queryMedication

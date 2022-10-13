@@ -5,7 +5,7 @@ const queryMedication = (req, res) => {
     if (type === "id") {
         medication = DUMMY_MEDICATION.find((x) => x.id === value)
     } else {
-        medication = DUMMY_MEDICATION.findOne({ name: value })
+        medication = DUMMY_MEDICATION.find((x) => x.name === value)
     }
     console.log(medication.stock)
     res.json({ medication: medication })

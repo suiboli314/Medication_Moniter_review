@@ -1,8 +1,13 @@
 const queryControllers = require("./query-controllers")
-const DUMMY_MEDICATION = queryControllers.DUMMY_MEDICATION
+const mongoUtil = require("../mongoUtil")
 
-const getLowStock = (req, res) => {
-    const lowStock = DUMMY_MEDICATION.filter((e) => e.stock < 5)
+const getLowStock = async (req, res) => {
+    const database = mongoUtil.getDB()
+    const query = { stock: { $lt: 5 } }
+    const lowStock = await database
+        .collection("medications")
+        .find(query)
+        .toArray()
     res.json({ lowStock: lowStock })
 }
 

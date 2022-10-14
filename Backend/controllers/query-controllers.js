@@ -1,12 +1,17 @@
-const queryMedication = (req, res) => {
-    const { type, value } = req.body
+const mongoUtil = require("../mongoUtil")
 
-    let medication
+const queryMedication = async (req, res) => {
+    const { type, value } = req.body
+    const database = mongoUtil.getDB()
+    let query
     if (type === "id") {
-        medication = DUMMY_MEDICATION.find((x) => x.id === value)
+        query = { id: value }
     } else {
-        medication = DUMMY_MEDICATION.find((x) => x.name === value)
+        query = { name: value }
     }
+
+    const medication = await database.collection("medications").findOne(query)
+
     console.log(medication.stock)
     res.json({ medication: medication })
 }

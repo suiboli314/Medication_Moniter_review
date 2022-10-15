@@ -12,7 +12,6 @@ const queryMedication = async (req, res) => {
 
     const medication = await database.collection("medications").findOne(query)
 
-    console.log(medication.stock)
     res.json({ medication: medication })
 }
 

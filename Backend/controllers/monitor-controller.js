@@ -1,4 +1,3 @@
-const queryControllers = require("./query-controllers")
 const mongoUtil = require("../mongoUtil")
 
 const getLowStock = async (req, res) => {

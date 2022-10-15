@@ -7,6 +7,8 @@ const port = 3000
 
 const queryRoutes = require("./routes/query-routes")
 const monitorRoutes = require("./routes/monitor-routes")
+const refillRoutes = require("./routes/refill-routes")
+const restockRoutes = require("./routes/restock-routes")
 
 mongoUtil.connectToClient()
 
@@ -21,6 +23,10 @@ app.get("/", (req, res) => {
 app.use("/query", queryRoutes)
 
 app.use("/monitor", monitorRoutes)
+
+app.use("/refill", refillRoutes)
+
+app.use("/restock", restockRoutes)
 
 app.listen(port, () => {
     console.log(`Server runing at port ${port}`)

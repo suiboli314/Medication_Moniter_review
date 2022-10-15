@@ -1,7 +1,6 @@
 // refill order for patients
 const queryControllers = require("./query-controllers")
 const mongoUtil = require("../mongoUtil")
-const DUMMY_MEDICATION = queryControllers.DUMMY_MEDICATION
 
 const prescriptionOrder = (req, res) => {
     // Want to take in id or name, and quantity required

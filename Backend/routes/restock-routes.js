@@ -1,6 +1,6 @@
 const express = require("express")
 
-const restockControllers = require("../controllers/update-controller")
+const restockControllers = require("../controllers/restock-controller")
 
 const router = express.Router()
 

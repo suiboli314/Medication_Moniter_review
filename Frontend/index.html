@@ -5,6 +5,44 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Medication Monitor</title>
+        <link rel="stylesheet" href="./styles/query.css" />
     </head>
-    <body></body>
+    <body>
+        <from action="http://localhost:3000/query" method="get">
+            <fieldset>
+                <legend>Query The Stock</legend>
+                <ul class="formList">
+                    <li>
+                        <label for="query_value">Medication:</label>
+                        <input type="text" id="query_value" name="value" />
+                    </li>
+                    <li>
+                        <span>
+                            <input
+                                type="radio"
+                                name="type"
+                                id="by_name"
+                                value="name"
+                            />
+                            <label for="by_name">Query by name</label>
+                        </span>
+                        <span>
+                            <input
+                                type="radio"
+                                name="type"
+                                id="by_id"
+                                value="id"
+                            />
+                            <label for="by_id">Query by ID</label>
+                        </span>
+                    </li>
+                    <li>
+                        <button type="submit" id="queryBtn">
+                            Look Up Medicine
+                        </button>
+                    </li>
+                </ul>
+            </fieldset>
+        </from>
+    </body>
 </html>

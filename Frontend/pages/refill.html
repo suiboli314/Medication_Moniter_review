@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+        />
+        <link href="/Frontend/styles/order.css" rel="stylesheet" />
+        <title>Refill Form</title>
+    </head>
+    <body>
+        <!-- .container -->
+        <div class="container">
+            <div class="header">
+                <h1>Refill Form</h1>
+            </div>
+            <form action="" class="form" id="form">
+                <!-- medication name -->
+                <div class="form-control">
+                    <label>Medication Name</label
+                    ><input
+                        type="text"
+                        placeholder="aspirin"
+                        id="medicationName"
+                        required
+                    />
+                    <!-- small tag to display error message when necessary -->
+                    <small>Error message</small>
+                </div>
+
+                <!-- medication id -->
+                <div class="form-control">
+                    <label>Medication Id</label
+                    ><input
+                        type="number"
+                        placeholder="1234567"
+                        id="medicationId"
+                        required
+                    />
+                    <small>Error message</small>
+                </div>
+
+                <!-- quantity -->
+                <div class="form-control">
+                    <label>Quantity</label
+                    ><input type="number" id="quantity" required />
+                    <small>Error message</small>
+                </div>
+
+                <!-- form buttons -->
+                <div id="button-align">
+                    <!-- Reset button -->
+                    <button
+                        type="reset"
+                        class="btn btn-primary btn-rounded btn-block"
+                    >
+                        Reset
+                    </button>
+                    <!-- Submit button -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-rounded btn-block"
+                    >
+                        Place order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

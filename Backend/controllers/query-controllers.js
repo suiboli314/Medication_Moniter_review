@@ -1,7 +1,8 @@
 const mongoUtil = require("../mongoUtil")
 
 const queryMedication = async (req, res) => {
-    const { type, value } = req.body
+    const type = req.query.type
+    const value = req.query.value
     const database = mongoUtil.getDB()
     let query
     if (type === "id") {

@@ -1,13 +1,13 @@
 {
-  "name": "Frontend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^8.25.0",
-    "prettier": "^2.7.1"
-  },
-  "dependencies": {
-    "bootstrap": "5.2.2"
-  }
+    "name": "frontend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^8.25.0",
+        "prettier": "^2.7.1"
+    },
+    "dependencies": {
+        "bootstrap": "5.2.2"
+    }
 }

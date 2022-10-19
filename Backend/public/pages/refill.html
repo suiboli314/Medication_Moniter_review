@@ -10,7 +10,7 @@
             integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
             crossorigin="anonymous"
         />
-        <link href="/Frontend/styles/order.css" rel="stylesheet" />
+        <link href="/Backend/public/styles/order.css" rel="stylesheet" />
         <title>Refill Form</title>
     </head>
     <body>
@@ -19,7 +19,18 @@
             <div class="header">
                 <h1>Refill Form</h1>
             </div>
-            <form action="" class="form" id="form">
+            <form action="/refill" method="post" class="form" id="form">
+                <!-- Type -->
+                <div class="form-control">
+                    <label>Select Id or Name</label
+                    ><input
+                        type="text"
+                        placeholder="write either id or name"
+                        id="selectType"
+                        required
+                    />
+                </div>
+
                 <!-- medication name -->
                 <div class="form-control">
                     <label>Medication Name</label
@@ -29,8 +40,6 @@
                         id="medicationName"
                         required
                     />
-                    <!-- small tag to display error message when necessary -->
-                    <small>Error message</small>
                 </div>
 
                 <!-- medication id -->
@@ -40,16 +49,13 @@
                         type="number"
                         placeholder="1234567"
                         id="medicationId"
-                        required
                     />
-                    <small>Error message</small>
                 </div>
 
                 <!-- quantity -->
                 <div class="form-control">
                     <label>Quantity</label
                     ><input type="number" id="quantity" required />
-                    <small>Error message</small>
                 </div>
 
                 <!-- form buttons -->
@@ -63,13 +69,15 @@
                     </button>
                     <!-- Submit button -->
                     <button
-                        type="submit"
+                        type="button"
                         class="btn btn-primary btn-rounded btn-block"
+                        id="testingBtn"
                     >
                         Place order
                     </button>
                 </div>
             </form>
         </div>
+        <script src="../scripts/refill.js"></script>
     </body>
 </html>

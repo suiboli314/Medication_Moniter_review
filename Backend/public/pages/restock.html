@@ -19,7 +19,7 @@
             <div class="header">
                 <h1>Restock Form</h1>
             </div>
-            <form action="" class="form" id="form">
+            <form action="/restock" method="post" class="form" id="form">
                 <!-- medication name -->
                 <div class="form-control">
                     <label>Medication Name (generic)</label
@@ -29,7 +29,6 @@
                         id="medicationName"
                         required
                     />
-                    <small>Error message</small>
                 </div>
 
                 <!-- medication id -->
@@ -41,7 +40,6 @@
                         id="medicationId"
                         required
                     />
-                    <small>Error message</small>
                 </div>
 
                 <!-- Manufacturer -->
@@ -55,7 +53,6 @@
                 <div class="form-control">
                     <label>Quantity</label
                     ><input type="number" id="quantity" required />
-                    <small>Error message</small>
                 </div>
 
                 <!-- form buttons -->

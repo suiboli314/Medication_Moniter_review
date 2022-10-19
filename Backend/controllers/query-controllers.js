@@ -1,5 +1,7 @@
 const mongoUtil = require("../mongoUtil")
 
+let lastQuery
+
 const queryMedication = async (req, res) => {
     const type = req.body.type
     const value = req.body.value
@@ -12,36 +14,17 @@ const queryMedication = async (req, res) => {
     }   
     
     const medication = await database.collection("medications").findOne(query)
-    console.log("medication:", medication)
-    res.json({ medication: medication })
+ 
+
+    lastQuery = medication
+
+    res.redirect("/")
 }
 
-const DUMMY_MEDICATION = [
-    {
-        id: "9988776",
-        name: "pepto",
-        manufactor: "abc",
-        stock: 7,
-    },
-    {
-        id: "6655443",
-        name: "sinux",
-        manufactor: "def",
-        stock: 0,
-    },
-    {
-        id: "1234567",
-        name: "amoxicillin",
-        manufactor: "ghi",
-        stock: 5,
-    },
-    {
-        id: "7654321",
-        name: "aspirin",
-        manufactor: "xyz",
-        stock: 2,
-    },
-]
+const getLastQuery = (req, res) => {
+    console.log(lastQuery)
+    res.json({ lastQuery: lastQuery })
+}
 
 exports.queryMedication = queryMedication
-exports.DUMMY_MEDICATION = DUMMY_MEDICATION
+exports.getLastQuery = getLastQuery

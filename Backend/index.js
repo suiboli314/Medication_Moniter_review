@@ -20,6 +20,7 @@ app.use(bodyParser.json())
 // app.get("/", (req, res) => {
 //     res.send("Hello medication muamua!")
 // })
+app.use(express.static(path.join(__dirname, "public")))
 
 app.use("/query", queryRoutes)
 
@@ -28,8 +29,6 @@ app.use("/monitor", monitorRoutes)
 app.use("/refill", refillRoutes)
 
 app.use("/restock", restockRoutes)
-
-app.use(express.static(path.join(__dirname, "public")))
 
 app.listen(port, () => {
     console.log(`Server runing at port ${port}`)

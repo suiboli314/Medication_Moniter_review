@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./styles/query.css" />
     </head>
     <body>
-        <from action="/query" method="get">
+        <form action="/query" method="get">
             <fieldset>
                 <legend>Query The Stock</legend>
                 <ul class="formList">
@@ -44,5 +44,10 @@
                 </ul>
             </fieldset>
         </form>
+        <fieldset>
+            <legend>Query Result</legend>
+            <ul class="formList" id="queryResult"></ul>
+        </fieldset>
+        <script src="./scripts/query.js"></script>
     </body>
 </html>

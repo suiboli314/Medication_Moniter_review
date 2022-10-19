@@ -3,17 +3,18 @@ const mongoUtil = require("../mongoUtil")
 let lastQuery
 
 const queryMedication = async (req, res) => {
-    const type = req.query.type
-    const value = req.query.value
+    const type = req.body.type
+    const value = req.body.value
     const database = mongoUtil.getDB()
     let query
     if (type === "id") {
         query = { id: value }
     } else {
         query = { name: value }
-    }
-
+    }   
+    
     const medication = await database.collection("medications").findOne(query)
+ 
 
     lastQuery = medication
 

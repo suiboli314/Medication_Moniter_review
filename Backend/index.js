@@ -1,7 +1,9 @@
 const express = require("express")
+const cors = require('cors')
 const bodyParser = require("body-parser")
 const mongoUtil = require("./mongoUtil")
-const path = require("path")
+// const path = require("path")
+
 
 const app = express()
 const port = 3000
@@ -22,6 +24,10 @@ app.use(bodyParser.json())
 // })
 app.use(express.static(path.join(__dirname, "public")))
 
+app.use(cors({
+    origin: '*'
+}))
+
 app.use("/query", queryRoutes)
 
 app.use("/monitor", monitorRoutes)
@@ -29,6 +35,8 @@ app.use("/monitor", monitorRoutes)
 app.use("/refill", refillRoutes)
 
 app.use("/restock", restockRoutes)
+
+app.use(express.static('./public'))
 
 app.listen(port, () => {
     console.log(`Server runing at port ${port}`)

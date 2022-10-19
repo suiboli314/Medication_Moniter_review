@@ -5,7 +5,6 @@ let database
 const connectToClient = () => {
     const client = new MongoClient(uri)
     database = client.db("Medication_Monitor")
-    console.log(database)
     if (database) {
         console.log("connected")
     }

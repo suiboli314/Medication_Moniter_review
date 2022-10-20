@@ -4,16 +4,17 @@ const mongoUtil = require("../mongoUtil")
 
 const prescriptionOrder = async (req, res) => {
     // Want to take in id or name, and quantity required
-    const { type, value, quantity } = req.body
+    // const { type, value, quantity } = req.body
+    const { type, name, id, quantity } = req.body
     console.log(req.body)
-    console.log(type, value, quantity)
+    // console.log(type, value, quantity)
     const database = mongoUtil.getDB()
     let query
 
     if (type === "id") {
-        query = { id: value }
+        query = { id: id }
     } else {
-        query = { name: value }
+        query = { name: name }
     }
 
     const medications = await database.collection("medications")
@@ -24,6 +25,7 @@ const prescriptionOrder = async (req, res) => {
     if (!medication) {
         console.log("Can't find medication in database")
         // throw new Error("Can't find medication in database")
+        //res.status(400).json("Can't find medication in database!")
     } else if (quantity > medication.stock) {
         console.log("Not enough medication in stock!")
         // res.status(500).json({msg: "Not enough medication in stock!"})

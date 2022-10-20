@@ -55,7 +55,7 @@
                 <!-- quantity -->
                 <div class="form-control">
                     <label>Quantity</label
-                    ><input type="number" id="quantity" required />
+                    ><input type="number" id="quantity" required min="1" />
                 </div>
 
                 <!-- form buttons -->
@@ -76,6 +76,8 @@
                         Place order
                     </button>
                 </div>
+                <!-- This will display feedback message -->
+                <div id="notification"></div>
             </form>
         </div>
         <script src="../scripts/refill.js"></script>

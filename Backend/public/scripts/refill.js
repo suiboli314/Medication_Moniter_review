@@ -22,8 +22,8 @@ testingBtn.onclick = async function test() {
     if (medData.ok) {
         // medication is in database, so response is ok
         let result = await medData.json()
-        //console.log(result.medication.stock)
-        if (JSON.stringify(result.medication.stock) < 1) {
+        //console.log(result.medication.stock), < 1
+        if (JSON.stringify(result.medication.stock) <= 0) {
             notification.innerHTML = "Not enough medication in stock!"
         } else {
             notification.innerHTML = "Order refill successful!"

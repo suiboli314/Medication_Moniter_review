@@ -64,6 +64,7 @@
                     <button
                         type="reset"
                         class="btn btn-primary btn-rounded btn-block"
+                        onclick="resetMessage()"
                     >
                         Reset
                     </button>
@@ -81,5 +82,10 @@
             </form>
         </div>
         <script src="../scripts/refill.js"></script>
+        <script>
+            function resetMessage() {
+                notification.innerHTML = ""
+            }
+        </script>
     </body>
 </html>

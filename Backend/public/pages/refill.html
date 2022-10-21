@@ -19,7 +19,7 @@
             <div class="header">
                 <h1>Refill Form</h1>
             </div>
-            <form action="/refill" method="post" class="form" id="form">
+            <form action="/refill" method="post" class="form" id="refillform">
                 <!-- Type -->
                 <div class="form-control">
                     <label>Select Id or Name</label
@@ -64,7 +64,7 @@
                     <button
                         type="reset"
                         class="btn btn-primary btn-rounded btn-block"
-                        onclick="resetMessage()"
+                        id="resetBtn"
                     >
                         Reset
                     </button>
@@ -82,10 +82,5 @@
             </form>
         </div>
         <script src="../scripts/refill.js"></script>
-        <script>
-            function resetMessage() {
-                notification.innerHTML = ""
-            }
-        </script>
     </body>
 </html>

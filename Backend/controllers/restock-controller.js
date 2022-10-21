@@ -8,13 +8,20 @@ const restockOrder = async (req, res) => {
     const database = mongoUtil.getDB()
     const query = { id: id }
 
-    const medications = await database.collection("medications")
+    let medications = await database.collection("medications")
     let medication = await medications.findOne(query)
-    console.log(query)
-    // if medication is not in database -> insert
+    console.log(medication)
+    console.log("xyz123")
+    //if medication is not in database -> insert
     if (!medication) {
         const doc = { id, name, manufactor, stock: +quantity }
         await medications.insertOne(doc)
+        medication = await medications.findOne(query)
+        res.json({
+            message: "Medication successully added!",
+            medication: medication,
+        })
+        return
     } else {
         const update = {
             $inc: {
@@ -22,10 +29,15 @@ const restockOrder = async (req, res) => {
             },
         }
         await medications.updateOne(query, update)
+        medication = await medications.findOne(query)
+        res.json({
+            message: "Medication successully updated!",
+            medication: medication,
+        })
     }
-    medication = await medications.findOne(query)
-    console.log(query)
-    res.json({ medication: medication })
+    // medication = await medications.findOne(query)
+    // let updatedMedication = await medications.findOne(query)
+    // console.log(query)
 }
 
 exports.restockOrder = restockOrder

@@ -7,7 +7,7 @@ const restockOrder = async (req, res) => {
     const { id, name, manufactor, quantity } = req.body
     const database = mongoUtil.getDB()
     const query = { id: id }
-
+    if (!id) res.json({ medication: null })
     const medications = await database.collection("medications")
     let medication = await medications.findOne(query)
     console.log(query)
@@ -24,7 +24,7 @@ const restockOrder = async (req, res) => {
         await medications.updateOne(query, update)
     }
     medication = await medications.findOne(query)
-    console.log(query)
+    console.log(medication)
     res.json({ medication: medication })
 }
 

@@ -1,4 +1,4 @@
-const testingBtn = document.getElementById("testingBtn")
+const testingBtn = document.getElementById("testingBtn2")
 //const type = document.getElementById("selectType")
 const valueName = document.getElementById("medicationName")
 const valueId = document.getElementById("medicationId")
@@ -13,7 +13,7 @@ testingBtn.onclick = async function test() {
         manufactor: manufacture.value,
         quantity: quantity.value,
     }
-    console.log(data)
+
     let medData = await fetch("/restock", {
         method: "POST", // or 'PUT'
         headers: {

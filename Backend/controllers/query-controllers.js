@@ -3,7 +3,7 @@ const mongoUtil = require("../mongoUtil")
 let lastQuery
 
 const queryMedication = async (req, res) => {
-    const type = req.querytype
+    const type = req.query.type
     const value = req.query.value
     const database = mongoUtil.getDB()
     let query
@@ -21,7 +21,6 @@ const queryMedication = async (req, res) => {
 }
 
 const getLastQuery = (req, res) => {
-    console.log(lastQuery)
     res.json({ lastQuery: lastQuery })
 }
 

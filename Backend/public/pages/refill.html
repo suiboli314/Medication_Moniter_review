@@ -51,7 +51,7 @@
             <div class="header">
                 <h1>Refill Form</h1>
             </div>
-            <form action="/refill" method="post" class="form" id="form">
+            <form action="/refill" method="post" class="form" id="refillform">
                 <!-- Type -->
                 <div class="form-control">
                     <label>Select Id or Name</label
@@ -87,7 +87,7 @@
                 <!-- quantity -->
                 <div class="form-control">
                     <label>Quantity</label
-                    ><input type="number" id="quantity" required />
+                    ><input type="number" id="quantity" required min="1" />
                 </div>
 
                 <!-- form buttons -->
@@ -96,6 +96,7 @@
                     <button
                         type="reset"
                         class="btn btn-primary btn-rounded btn-block"
+                        id="resetBtn"
                     >
                         Reset
                     </button>
@@ -108,6 +109,8 @@
                         Place order
                     </button>
                 </div>
+                <!-- This will display feedback message -->
+                <div id="notification"></div>
             </form>
         </div>
         <script src="../scripts/refill.js"></script>

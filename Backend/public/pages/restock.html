@@ -51,7 +51,7 @@
             <div class="header">
                 <h1>Restock Form</h1>
             </div>
-            <form action="/restock" method="post" class="form" id="form">
+            <form action="/restock" method="post" class="form" id="restockform">
                 <!-- medication name -->
                 <div class="form-control">
                     <label>Medication Name (generic)</label
@@ -78,7 +78,6 @@
                 <div class="form-control">
                     <label>Manufacturer</label
                     ><input type="text" id="manufacture" required />
-                    <small>Error message</small>
                 </div>
 
                 <!-- quantity -->
@@ -98,18 +97,25 @@
                     </button>
                     <!-- Submit button -->
                     <button
-                        type="submit"
+                        type="button"
                         class="btn btn-primary btn-rounded btn-block"
+                        id="testingBtn2"
                     >
                         Place order
                     </button>
                 </div>
+                <!-- This will display feedback message -->
+                <div id="notification"></div>
             </form>
         </div>
+
+        <script src="../scripts/restock.js"></script>
+
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"
         ></script>
+
     </body>
 </html>

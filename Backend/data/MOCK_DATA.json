@@ -1,0 +1,302 @@
+[
+  {
+    "id": "M85862",
+    "name": "Bio Gentian",
+    "manufactor": "BioActive Nutritional Inc .",
+    "stock": 1
+  },
+  {
+    "id": "X35XXXA",
+    "name": "Eye Wash",
+    "manufactor": "Hi-Tech Pharmacal Co., Inc.",
+    "stock": 2
+  },
+  {
+    "id": "S96022A",
+    "name": "FACE IT RADIANCE POWDER PACT SPF25 MOISTURE VEIL NB21",
+    "manufactor": "THEFACESHOP CO., LTD",
+    "stock": 3
+  },
+  {
+    "id": "T24631S",
+    "name": "Infectistat",
+    "manufactor": "Apotheca Company",
+    "stock": 4
+  },
+  {
+    "id": "R93",
+    "name": "COZAAR",
+    "manufactor": "Merck Sharp & Dohme Corp.",
+    "stock": 5
+  },
+  {
+    "id": "T41205A",
+    "name": "Shagbark Hickory",
+    "manufactor": "Nelco Laboratories, Inc.",
+    "stock": 6
+  },
+  {
+    "id": "C419",
+    "name": "IASO progressive age care emulsion",
+    "manufactor": "IASO Inc",
+    "stock": 7
+  },
+  {
+    "id": "S3660XS",
+    "name": "Nimbex",
+    "manufactor": "AbbVie Inc.",
+    "stock": 8
+  },
+  {
+    "id": "O411414",
+    "name": "BENZTROPINE MESYLATE",
+    "manufactor": "Major Pharmaceuticals",
+    "stock": 9
+  },
+  {
+    "id": "O368914",
+    "name": "Freshmint Premium Anticavity",
+    "manufactor": "New World Imports, Inc",
+    "stock": 10
+  },
+  {
+    "id": "S82256Q",
+    "name": "Carvedilol",
+    "manufactor": "State of Florida DOH Central Pharmacy",
+    "stock": 11
+  },
+  {
+    "id": "S30826",
+    "name": "Loperamide Hydrochloride",
+    "manufactor": "H E B",
+    "stock": 12
+  },
+  {
+    "id": "S61112A",
+    "name": "SHISEIDO SUN PROTECTION COMPACT FOUNDATION (REFILL)",
+    "manufactor": "SHISEIDO AMERICA INC.",
+    "stock": 13
+  },
+  {
+    "id": "S35514D",
+    "name": "Folet One",
+    "manufactor": "Pronova Corporation",
+    "stock": 14
+  },
+  {
+    "id": "T428X5D",
+    "name": "Anastrozole",
+    "manufactor": "Teva Pharmaceuticals USA Inc",
+    "stock": 15
+  },
+  {
+    "id": "M84372K",
+    "name": "Ibuprofen",
+    "manufactor": "Healthy Accents (DZA Brands, LLC)",
+    "stock": 16
+  },
+  {
+    "id": "M67229",
+    "name": "Sage",
+    "manufactor": "Antigen Laboratories, Inc.",
+    "stock": 17
+  },
+  {
+    "id": "T22129A",
+    "name": "PAIN RELIEF THERAPY PATCH",
+    "manufactor": "UNITED EXCHANGE CORP",
+    "stock": 18
+  },
+  {
+    "id": "T22269D",
+    "name": "Risperidone",
+    "manufactor": "Jubilant Cadista Pharmaceuticals Inc.",
+    "stock": 19
+  },
+  {
+    "id": "I6901",
+    "name": "Phenylalanine",
+    "manufactor": "Deseret Biologicals, Inc.",
+    "stock": 20
+  },
+  {
+    "id": "S82829S",
+    "name": "Gabapentin",
+    "manufactor": "Rebel Distributors Corp",
+    "stock": 21
+  },
+  {
+    "id": "E112",
+    "name": "K-Tab",
+    "manufactor": "AbbVie Inc.",
+    "stock": 22
+  },
+  {
+    "id": "X80XXXA",
+    "name": "Oxcarbazepine",
+    "manufactor": "Glenmark Generics Inc., USA",
+    "stock": 23
+  },
+  {
+    "id": "O9A22",
+    "name": "Treatment Set TS333176",
+    "manufactor": "Antigen Laboratories, Inc.",
+    "stock": 24
+  },
+  {
+    "id": "I2692",
+    "name": "Eye Irrigating",
+    "manufactor": "Rugby Laboratories Inc.",
+    "stock": 25
+  },
+  {
+    "id": "I63411",
+    "name": "Baclofen",
+    "manufactor": "New Horizon Rx Group, LLC",
+    "stock": 26
+  },
+  {
+    "id": "V241XXD",
+    "name": "CELEBREX",
+    "manufactor": "Preferred Pharmaceuticals, Inc.",
+    "stock": 27
+  },
+  {
+    "id": "S50821A",
+    "name": "Furosemide",
+    "manufactor": "Mylan Institutional Inc.",
+    "stock": 28
+  },
+  {
+    "id": "T84012D",
+    "name": "Morphine Sulfate",
+    "manufactor": "Par Pharmaceutical Inc.",
+    "stock": 29
+  },
+  {
+    "id": "M84459",
+    "name": "BANANA BOAT",
+    "manufactor": "Energizer Personal Care LLC",
+    "stock": 30
+  },
+  {
+    "id": "K05312",
+    "name": "Ciprofloxacin",
+    "manufactor": "Lake Erie Medical DBA Quality Care Products LLC",
+    "stock": 31
+  },
+  {
+    "id": "S92355P",
+    "name": "In Control Nicotine",
+    "manufactor": "H E B",
+    "stock": 32
+  },
+  {
+    "id": "E083412",
+    "name": "ropinirole",
+    "manufactor": "Sandoz Inc",
+    "stock": 33
+  },
+  {
+    "id": "V4373XS",
+    "name": "Bicalutamide",
+    "manufactor": "Golden State Medical Supply, Inc.",
+    "stock": 34
+  },
+  {
+    "id": "O354XX4",
+    "name": "Cyclopentolate Hydrochloride",
+    "manufactor": "Falcon Pharmaceuticals, Ltd.",
+    "stock": 35
+  },
+  {
+    "id": "H44621",
+    "name": "Amitriptyline Hydrochloride",
+    "manufactor": "Unit Dose Services",
+    "stock": 36
+  },
+  {
+    "id": "H5369",
+    "name": "Amlodipine Besylate and Benazepril Hydrochloride",
+    "manufactor": "Clinical Solutions Wholesale",
+    "stock": 37
+  },
+  {
+    "id": "S70219S",
+    "name": "NataChew",
+    "manufactor": "Eckson Labs, LLC",
+    "stock": 38
+  },
+  {
+    "id": "O9831",
+    "name": "LAMOTRIGINE",
+    "manufactor": "PD-Rx Pharmaceuticals, Inc.",
+    "stock": 39
+  },
+  {
+    "id": "S56498S",
+    "name": "Lorazepam",
+    "manufactor": "Rebel Distributors Corp",
+    "stock": 40
+  },
+  {
+    "id": "S72066K",
+    "name": "Perfecting Liquid Foundation Golden Beige",
+    "manufactor": "Arbonne International, LLC",
+    "stock": 41
+  },
+  {
+    "id": "S12120S",
+    "name": "Regular Strength Antacid Calcium Supplement",
+    "manufactor": "Publix Super Markets Inc",
+    "stock": 42
+  },
+  {
+    "id": "S85911A",
+    "name": "LANOXIN",
+    "manufactor": "Covis Pharmaceuticals Inc",
+    "stock": 43
+  },
+  {
+    "id": "F17220",
+    "name": "PrednisoLONE",
+    "manufactor": "Qualitest Pharmaceuticals",
+    "stock": 44
+  },
+  {
+    "id": "H25019",
+    "name": "Drainer",
+    "manufactor": "Newton Laboratories, Inc.",
+    "stock": 45
+  },
+  {
+    "id": "S72032H",
+    "name": "Sterile Water",
+    "manufactor": "B. Braun Medical Inc.",
+    "stock": 46
+  },
+  {
+    "id": "S3145XA",
+    "name": "Escitalopram",
+    "manufactor": "Unit Dose Services",
+    "stock": 47
+  },
+  {
+    "id": "T33829A",
+    "name": "Virotox",
+    "manufactor": "BioActive Nutritional, Inc.",
+    "stock": 48
+  },
+  {
+    "id": "T3409XS",
+    "name": "Topiramate",
+    "manufactor": "Teva Pharmaceuticals USA Inc",
+    "stock": 49
+  },
+  {
+    "id": "V011",
+    "name": "Penicillin V Potassium",
+    "manufactor": "Teva Pharmaceuticals USA Inc",
+    "stock": 50
+  }
+]

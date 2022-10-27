@@ -9,6 +9,7 @@ const queryRoutes = require("./routes/query-routes")
 const monitorRoutes = require("./routes/monitor-routes")
 const refillRoutes = require("./routes/refill-routes")
 const restockRoutes = require("./routes/restock-routes")
+const loginRoutes = require("./routes/login-routes")
 
 mongoUtil.connectToClient()
 
@@ -28,6 +29,8 @@ app.use("/monitor", monitorRoutes)
 app.use("/refill", refillRoutes)
 
 app.use("/restock", restockRoutes)
+
+app.use("/login", loginRoutes)
 
 app.use(express.static("./public"))
 

@@ -10,7 +10,7 @@
             integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
             crossorigin="anonymous"
         />
-        <link href="/Backend/public/styles/order.css" rel="stylesheet" />
+        <link href="../styles/order2.css" rel="stylesheet" />
         <title>Refill Form</title>
     </head>
     <body>
@@ -51,15 +51,21 @@
             <div class="header">
                 <h1>Refill Form</h1>
             </div>
-            <form action="/refill" method="post" class="form" id="refillform">
+            <!-- removed id="refillform" attribute-->
+            <form
+                action="/refill"
+                method="post"
+                class="form"
+                onsubmit="return validate()"
+            >
                 <!-- Type -->
                 <div class="form-control">
-                    <label>Select Id or Name</label
+                    <label>Select ID or Name</label
                     ><input
                         type="text"
-                        placeholder="write either id or name"
+                        placeholder="Type either id or name"
                         id="selectType"
-                        required
+                        required="true"
                     />
                 </div>
 
@@ -70,24 +76,30 @@
                         type="text"
                         placeholder="aspirin"
                         id="medicationName"
-                        required
+                        required="true"
                     />
                 </div>
 
                 <!-- medication id -->
                 <div class="form-control">
-                    <label>Medication Id</label
+                    <label>Medication ID</label
                     ><input
                         type="number"
                         placeholder="1234567"
                         id="medicationId"
+                        required="true"
                     />
                 </div>
 
                 <!-- quantity -->
                 <div class="form-control">
                     <label>Quantity</label
-                    ><input type="number" id="quantity" required min="1" />
+                    ><input
+                        type="number"
+                        id="quantity"
+                        required="true"
+                        min="1"
+                    />
                 </div>
 
                 <!-- form buttons -->
@@ -100,18 +112,23 @@
                     >
                         Reset
                     </button>
-                    <!-- Submit button -->
+                    <!-- Submit button changed type from button to submit -->
                     <button
-                        type="button"
+                        type="submit"
                         class="btn btn-primary btn-rounded btn-block"
                         id="testingBtn"
                     >
                         Place order
                     </button>
                 </div>
-                <!-- This will display feedback message -->
-                <div id="notification"></div>
             </form>
+        </div>
+        <div
+            class="card text-center"
+            style="margin: auto; width: 40rem; margin-top: 40px"
+        >
+            <!-- This will display feedback message -->
+            <div id="notification"></div>
         </div>
         <script src="../scripts/refill.js"></script>
         <script
@@ -119,5 +136,13 @@
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"
         ></script>
+        <script>
+            function validate() {
+                if (valueName.value == "") {
+                    return false
+                }
+                return true
+            }
+        </script>
     </body>
 </html>

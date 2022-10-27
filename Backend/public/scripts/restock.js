@@ -1,5 +1,6 @@
 const testingBtn2 = document.getElementById("testingBtn2")
 //const type = document.getElementById("selectType")
+const resetBtn2 = document.getElementById("resetBtn2")
 const valueName = document.getElementById("medicationName")
 const valueId = document.getElementById("medicationId")
 const quantity = document.getElementById("quantity")
@@ -26,18 +27,20 @@ testingBtn2.onclick = async function test() {
         let result = await medData.json()
         //console.log(result.medication.stock)
         notification.innerHTML =
-            result.message + "<br>" + JSON.stringify(result.medication)
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         let updated = JSON.stringify(data)
-        //         console.log("Updated:", Object.values(data))
-        //         if (updated.quantity < 1) {
-        //             notification.innerHTML = "Not enough medication in stock"
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.error("Error56:", error)
-        //     })
-        // console.log("XYZ", data)
+            //result.message + "<br>" + JSON.stringify(result.medication)
+            result.message +
+            "<br>" +
+            "<br>" +
+            "Medication: " +
+            JSON.stringify(result.medication.name) +
+            "<br>" +
+            "Medication Id: " +
+            JSON.stringify(result.medication.id) +
+            "<br>" +
+            "Updated stock: " +
+            JSON.stringify(result.medication.stock)
+    }
+    resetBtn2.onclick = function () {
+        notification.innerHTML = ""
     }
 }

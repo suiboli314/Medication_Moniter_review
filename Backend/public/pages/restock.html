@@ -62,6 +62,7 @@
                         id="medicationName"
                         required="true"
                     />
+                    <div id="typeErrorA"></div>
                 </div>
 
                 <!-- medication id -->
@@ -73,12 +74,14 @@
                         id="medicationId"
                         required="true"
                     />
+                    <div id="typeErrorB"></div>
                 </div>
 
                 <!-- Manufacturer -->
                 <div class="form-control">
                     <label>Manufacturer</label
                     ><input type="text" id="manufacture" required="true" />
+                    <div id="typeErrorC"></div>
                 </div>
 
                 <!-- quantity -->
@@ -90,6 +93,7 @@
                         required="true"
                         min="1"
                     />
+                    <div id="typeErrorD"></div>
                 </div>
 
                 <!-- form buttons -->
@@ -106,7 +110,7 @@
                     <button
                         type="button"
                         class="btn btn-primary btn-rounded btn-block"
-                        id="testingBtn2"
+                        id="submitBtn2"
                     >
                         Place order
                     </button>

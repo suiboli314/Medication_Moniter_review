@@ -52,12 +52,7 @@
                 <h1>Refill Form</h1>
             </div>
             <!-- removed id="refillform" attribute-->
-            <form
-                action="/refill"
-                method="post"
-                class="form"
-                onsubmit="return validate()"
-            >
+            <form action="/refill" method="post" class="form needs-validation">
                 <!-- Type -->
                 <div class="form-control">
                     <label>Select ID or Name</label
@@ -65,19 +60,19 @@
                         type="text"
                         placeholder="Type either id or name"
                         id="selectType"
-                        required="true"
                     />
+                    <div id="typeError1"></div>
                 </div>
 
                 <!-- medication name -->
                 <div class="form-control">
-                    <label>Medication Name</label
-                    ><input
+                    <label>Medication Name</label>
+                    <input
                         type="text"
                         placeholder="aspirin"
                         id="medicationName"
-                        required="true"
                     />
+                    <div id="typeError2"></div>
                 </div>
 
                 <!-- medication id -->
@@ -87,19 +82,14 @@
                         type="number"
                         placeholder="1234567"
                         id="medicationId"
-                        required="true"
                     />
+                    <div id="typeError3"></div>
                 </div>
 
                 <!-- quantity -->
                 <div class="form-control">
-                    <label>Quantity</label
-                    ><input
-                        type="number"
-                        id="quantity"
-                        required="true"
-                        min="1"
-                    />
+                    <label>Quantity</label><input type="number" id="quantity" />
+                    <div id="typeError4"></div>
                 </div>
 
                 <!-- form buttons -->
@@ -114,9 +104,9 @@
                     </button>
                     <!-- Submit button changed type from button to submit -->
                     <button
-                        type="submit"
+                        type="button"
                         class="btn btn-primary btn-rounded btn-block"
-                        id="testingBtn"
+                        id="submitBtn"
                     >
                         Place order
                     </button>
@@ -136,13 +126,5 @@
             integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
             crossorigin="anonymous"
         ></script>
-        <script>
-            function validate() {
-                if (valueName.value == "") {
-                    return false
-                }
-                return true
-            }
-        </script>
     </body>
 </html>

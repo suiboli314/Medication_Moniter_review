@@ -1,3 +1,12 @@
+body {
+    background-color: rgba(179, 213, 229, 0.4);
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .container {
     background-color: #fff;
     border-radius: 5px;
@@ -29,19 +38,15 @@
     width: 100%;
 }
 
+.form-control small {
+    position: absolute;
+    visibility: hidden;
+}
+
 h1 {
     text-align: center;
 }
 
 #button-align {
     text-align: center;
-}
-
-body {
-    background-color: rgba(179, 213, 229, 0.4);
-}
-
-label {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-        "Lucida Sans", Arial, sans-serif;
 }

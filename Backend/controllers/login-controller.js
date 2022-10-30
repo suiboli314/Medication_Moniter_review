@@ -6,17 +6,18 @@ const authenticateUser = async (req, res) => {
     // console.log(type, value, quantity)
     const database = mongoUtil.getDB()
 
+    // store user input into variables
     let query
     query = { user: user }
     let userPassword
     userPassword = { password: password }
 
+    // query inside users collection
     const users = await database.collection("users")
     let username = await users.findOne(query)
 
     if (!username) {
-        console.log("Can't find medication in database")
-        // throw new Error("Can't find medication in database")
+        console.log("Can't find username in database")
         res.json({
             message: "Username not in database!",
         })
@@ -24,9 +25,10 @@ const authenticateUser = async (req, res) => {
         return
     } else if (username.password != userPassword) {
         res.json({
-            message: "Wrong password!",
+            message: "Username and password do not match!",
         })
     }
+    // else redirect to page?
 }
 
 exports.authenticateUser = authenticateUser

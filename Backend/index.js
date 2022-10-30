@@ -1,39 +1,41 @@
-const express = require("express")
-const bodyParser = require("body-parser")
-const mongoUtil = require("./mongoUtil")
+//Yao Zhong
 
-const app = express()
-const port = 3000
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoUtil = require("./mongoUtil");
 
-const queryRoutes = require("./routes/query-routes")
-const monitorRoutes = require("./routes/monitor-routes")
-const refillRoutes = require("./routes/refill-routes")
-const restockRoutes = require("./routes/restock-routes")
+const app = express();
+const port = 3000;
+
+//importing the different routes
+const queryRoutes = require("./routes/query-routes");
+const monitorRoutes = require("./routes/monitor-routes");
+const refillRoutes = require("./routes/refill-routes");
+const restockRoutes = require("./routes/restock-routes");
 const loginRoutes = require("./routes/login-routes")
 
-mongoUtil.connectToClient()
+//connect to the database when the project starts
+mongoUtil.connectToClient();
 
 // with help of body parser, we can use req.body
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-// app.get("/", (req, res) => {
-//     res.send("Hello medication muamua!")
-// })
-app.use(express.static("./public"))
+app.use(express.static("./public"));
 
-app.use("/query", queryRoutes)
+app.use("/query", queryRoutes);
 
-app.use("/monitor", monitorRoutes)
+app.use("/monitor", monitorRoutes);
 
-app.use("/refill", refillRoutes)
+app.use("/refill", refillRoutes);
 
-app.use("/restock", restockRoutes)
+app.use("/restock", restockRoutes);
+
 
 app.use("/login", loginRoutes)
-
 app.use(express.static("./public"))
 
+
 app.listen(port, () => {
-    console.log(`Server runing at port ${port}`)
-})
+  console.log(`Server runing at port ${port}`);
+});

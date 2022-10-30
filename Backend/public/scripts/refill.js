@@ -1,60 +1,100 @@
-const testingBtn = document.getElementById("testingBtn")
+// Aaron
+const submitBtn = document.getElementById("submitBtn")
 const resetBtn = document.getElementById("resetBtn")
 const type = document.getElementById("selectType")
 const valueName = document.getElementById("medicationName")
 const valueId = document.getElementById("medicationId")
 const quantity = document.getElementById("quantity")
 const notification = document.getElementById("notification")
+const typeError1 = document.getElementById("typeError1")
+const typeError2 = document.getElementById("typeError2")
+const typeError3 = document.getElementById("typeError3")
+const typeError4 = document.getElementById("typeError4")
 
-testingBtn.onclick = async function test() {
+// Error message color and fontsize
+document.getElementById("typeError1").style.color = "red"
+document.getElementById("typeError2").style.color = "red"
+document.getElementById("typeError3").style.color = "red"
+document.getElementById("typeError4").style.color = "red"
+document.getElementById("typeError1").style.fontSize = "small"
+document.getElementById("typeError2").style.fontSize = "small"
+document.getElementById("typeError3").style.fontSize = "small"
+document.getElementById("typeError4").style.fontSize = "small"
+
+// function is called when submit button is clicked
+submitBtn.onclick = async function test() {
+    // store input data into data
     const data = {
         type: type.value,
         name: valueName.value,
         id: valueId.value,
         quantity: quantity.value,
     }
-    let medData = await fetch("/refill", {
-        method: "POST", // or 'PUT'
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    })
-    if (medData.ok) {
-        // medication is in database, so response is ok
-        let result = await medData.json()
-        notification.innerHTML =
-            result.message + "<br>" + JSON.stringify(result.medication)
-        //console.log(result.medication.stock), < 1
-        // edge case where there is only 1 medication left, how to compare updated to original record
-        // if (JSON.stringify(result.medication.stock) < 1) {
-        //     notification.innerHTML =
-        //         //"Not enough medication in stock! " +
-        //         //JSON.stringify(result.medication)
-        // } else {
-        //     notification.innerHTML =
-        //         "Order refill successful! " + JSON.stringify(result.medication)
-        // }
+
+    // Check if the input of the first field is either "name" or "id"
+    // Store result into typeCheck
+    let typeCheck
+    if (type.value == "name") {
+        typeCheck = true
+    } else if (type.value == "id") {
+        typeCheck = true
     } else {
-        // since this medication doesn't exist in database this is actually an error
-        let error = await medData.json()
-        notification.innerHTML = error
-        // notification.innerHTML = "Medication doesn't exist in database!"
+        typeCheck = false
     }
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         let updated = JSON.stringify(data)
-    //         console.log("Updated:", Object.values(data))
-    //         if (updated.quantity < 1) {
-    //             notification.innerHTML = "Not enough medication in stock"
-    //         }
-    //     })
-    //     .catch((error) => {
-    //         console.error("Error56:", error)
-    //     })
-    // console.log("XYZ", data)
+
+    // various checks to see if input fields of form are valid
+    // before sending input to backend
+    if (type.value.length === 0) {
+        typeError1.innerHTML = "Field cannot be empty!"
+    } else if (valueName.value.length === 0) {
+        typeError2.innerHTML = "Field cannot be empty!"
+    } else if (!typeCheck) {
+        typeError1.innerHTML = "Please select id or name"
+    } else if (valueId.value <= 0 || valueId.value == null) {
+        typeError3.innerHTML = "Invalid value!"
+    } else if (quantity.value <= 0 || quantity.value == null) {
+        typeError4.innerHTML =
+            "Invalid value!  Value has to be a positive integer."
+    } else {
+        let medData = await fetch("/refill", {
+            method: "POST", // or 'PUT'
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        // check whether response is successful
+        if (medData.ok) {
+            // Remove error messages when displaying feedback message
+            typeError1.innerHTML = ""
+            typeError2.innerHTML = ""
+            typeError3.innerHTML = ""
+            typeError4.innerHTML = ""
+
+            // store response json into result
+            // display message
+            let result = await medData.json()
+            notification.innerHTML =
+                result.message +
+                "<br>" +
+                "<br>" +
+                "Medication: " +
+                JSON.stringify(result.medication.name) +
+                "<br>" +
+                "Medication Id: " +
+                JSON.stringify(result.medication.id) +
+                "<br>" +
+                "Current stock: " +
+                JSON.stringify(result.medication.stock)
+        }
+    }
 }
 
+// clears all error messages and notification
 resetBtn.onclick = function () {
     notification.innerHTML = ""
+    typeError1.innerHTML = ""
+    typeError2.innerHTML = ""
+    typeError3.innerHTML = ""
+    typeError4.innerHTML = ""
 }

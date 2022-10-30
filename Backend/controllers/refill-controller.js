@@ -10,7 +10,7 @@ const prescriptionOrder = async (req, res) => {
     // console.log(type, value, quantity)
     const database = mongoUtil.getDB()
     let query
-
+    // need to make sure first field is specified
     if (type === "id") {
         query = { id: id }
     } else {
@@ -52,7 +52,7 @@ const prescriptionOrder = async (req, res) => {
             await medications.updateOne(query, update)
             medication = await medications.findOne(query)
         }
-        res.json({ message: "Success", medication: medication })
+        res.json({ message: "Refill Successful!", medication: medication })
     } catch (error) {
         res.status(500).json({ msg: error })
     }

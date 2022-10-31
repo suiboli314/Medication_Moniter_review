@@ -7,8 +7,9 @@ const prescriptionOrder = async (req, res) => {
     const database = mongoUtil.getDB()
     let query
     
-    // Check if type is "id" or "name".  If type is "id" set query to id value input.
-    // Otherwise set query to name value input
+    // Query for medication is based on type selected by user
+    // If user selects "id", we look find the medication in database using medication id provided
+    // Otherwise we use medication name
     if (type === "id") {
         query = { id: id }
     } else {

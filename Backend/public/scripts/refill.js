@@ -1,4 +1,5 @@
-// Aaron Leung - Refill (frontend)
+// Aaron Leung
+// Refill (frontend), displays feedback results to users
 const submitBtn = document.getElementById("submitBtn")
 const resetBtn = document.getElementById("resetBtn")
 const type = document.getElementById("selectType")
@@ -61,7 +62,7 @@ submitBtn.onclick = async function test() {
         typeError1.innerHTML = "Please select id or name"
     } else if (valueId.value.length === 0) {
         typeError3.innerHTML = "Field cannot be empty!"
-    } else if (quantity.value <= 0 || quantity.value === null) {
+    }  else if (quantity.value <= 0 || quantity.value == null) {
         typeError4.innerHTML =
             "Invalid value!  Value has to be a positive integer."
     } else {

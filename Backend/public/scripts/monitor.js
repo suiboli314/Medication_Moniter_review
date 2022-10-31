@@ -30,8 +30,8 @@ const makeItemCard = (item) => {
   listItem.innerHTML = `<div class="card text-center">
     <h4 class="card-title">${item.name}</h4>
     <h6>Current Stock : ${item.stock}</h6>
-    <h6>Current Stock : ${item.manufactor}</h6>
-    <h6>Current Stock : ${item.id}</h6>
+    <h6>Manufactor : ${item.manufactor}</h6>
+    <h6>Medication ID : ${item.id}</h6>
   </div>`;
   lowStockItems.appendChild(listItem);
 };

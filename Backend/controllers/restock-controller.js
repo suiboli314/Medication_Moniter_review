@@ -9,8 +9,8 @@ const restockOrder = async (req, res) => {
 
     let medications = await database.collection("medications")
     let medication = await medications.findOne(query)
-
-    //if medication is not in database, insert into database
+    
+    // check if medication is in database, if not then insert into database
     if (!medication) {
         const doc = { id, name, manufactor, stock: +quantity }
         await medications.insertOne(doc)

@@ -51,7 +51,7 @@ submitBtn.onclick = async function test() {
     } else if (!typeCheck) {
         typeError1.innerHTML = "Please select id or name"
     } else if (valueId.value.length === 0) {
-        typeError3.innerHTML = "Invalid value!"
+        typeError3.innerHTML = "Field cannot be empty!"
     } else if (quantity.value.length <= 0 || quantity.value === null) {
         typeError4.innerHTML =
             "Invalid value!  Value has to be a positive integer."

@@ -39,7 +39,7 @@ submitBtn2.onclick = async function test() {
         typeErrorB.innerHTML = "Field cannot be empty!"
     } else if (manufacture.value.length === 0) {
         typeErrorC.innerHTML = "Field cannot be empty!"
-    } else if (quantity.value <= 0 || quantity.value == null) {
+    } else if (quantity.value <= 0 || quantity.value === null) {
         typeErrorD.innerHTML = "Invalid value!"
     } else {
         let medData = await fetch("/restock", {

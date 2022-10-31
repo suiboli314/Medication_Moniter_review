@@ -3,7 +3,7 @@
 
 const { MongoClient } = require("mongodb");
 // This allows we use the local mongoDB
-const uri = "mongodb://127.0.0.1:27017";
+const uri = process.env.URI || "mongodb://127.0.0.1:27017";
 
 let database;
 

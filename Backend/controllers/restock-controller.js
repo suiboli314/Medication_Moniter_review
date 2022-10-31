@@ -1,4 +1,4 @@
-// Aaron Leung - restock inventory when medication is low
+// Aaron Leung - restock controller when medication is low
 const mongoUtil = require("../mongoUtil")
 
 const restockOrder = async (req, res) => {

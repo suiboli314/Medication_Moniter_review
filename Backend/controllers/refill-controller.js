@@ -1,4 +1,4 @@
-// Aaron Leung - refill order for patients
+// Aaron Leung - refill controller
 const mongoUtil = require("../mongoUtil")
 
 const prescriptionOrder = async (req, res) => {

@@ -1,3 +1,4 @@
+// Login Frontend - Aaron Leung
 const username = document.getElementById("user");
 const userPassword = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
@@ -20,7 +21,7 @@ loginBtn.onclick = async function test() {
     passwordError.innerHTML = "Field cannot be empty";
   } else {
     let userData = await fetch("/login", {
-      method: "POST", // or 'PUT'
+      method: "POST", 
       headers: {
         "Content-Type": "application/json",
       },

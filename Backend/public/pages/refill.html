@@ -14,8 +14,14 @@
     <link href="../styles/order.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="../favicon.ico?" />
     <title>Refill Form</title>
+    <meta name="author" content="Aaron Leung" />
+    <meta
+      name="description"
+      content="Refill page for Medication Monitor System"
+    />
   </head>
   <body>
+    <!-- Used same Navbar as other pages-->
     <nav class="navbar navbar-expand-md bg-primary">
       <div class="container-fluid">
         <a href="../index.html" class="navbar-brand">M-Monitor</a>
@@ -45,71 +51,72 @@
         </button>
       </div>
     </nav>
-        <div class="container">
-            <div class="header">
-                <h1>Refill Form</h1>
+    <!--Container for refill form: Aaron Leung-->
+    <div class="container">
+        <div class="header">
+            <h1>Refill Form</h1>
+        </div>
+        <form action="/refill" method="post" class="form">
+            <!-- Type -->
+            <div class="form-control">
+                <label>Select ID or Name</label
+                ><input
+                    type="text"
+                    placeholder="Type either id or name"
+                    id="selectType"
+                />
+                <div id="typeError1"></div>
             </div>
-            <form action="/refill" method="post" class="form">
-                <!-- Type -->
-                <div class="form-control">
-                    <label>Select ID or Name</label
-                    ><input
-                        type="text"
-                        placeholder="Type either id or name"
-                        id="selectType"
-                    />
-                    <div id="typeError1"></div>
-                </div>
 
-                <!-- medication name -->
-                <div class="form-control">
-                    <label>Medication Name</label>
-                    <input
-                        type="text"
-                        placeholder="aspirin"
-                        id="medicationName"
-                    />
-                    <div id="typeError2"></div>
-                </div>
+            <!-- medication name -->
+            <div class="form-control">
+                <label>Medication Name</label>
+                <input
+                    type="text"
+                    placeholder="aspirin"
+                    id="medicationName"
+                />
+                <div id="typeError2"></div>
+            </div>
 
-                <!-- medication id -->
-                <div class="form-control">
-                    <label>Medication ID</label
-                    ><input
-                        type="text"
-                        id="medicationId"
-                    />
-                    <div id="typeError3"></div>
-                </div>
+            <!-- medication id -->
+            <div class="form-control">
+                <label>Medication ID</label
+                ><input
+                    type="text"
+                    id="medicationId"
+                />
+                <div id="typeError3"></div>
+            </div>
 
-        <!-- quantity -->
-        <div class="form-control">
-          <label>Quantity</label><input type="number" id="quantity" />
-          <div id="typeError4"></div>
+            <!-- quantity -->
+            <div class="form-control">
+            <label>Quantity</label><input type="number" id="quantity" />
+            <div id="typeError4"></div>
+            </div>
+
+            <!-- form buttons -->
+            <div id="button-align">
+            <!-- Reset button -->
+            <button
+                type="reset"
+                class="btn btn-primary btn-rounded btn-block"
+                id="resetBtn"
+            >
+                Reset
+            </button>
+            <!-- Submit button changed type from button to submit -->
+            <button
+                type="button"
+                class="btn btn-primary btn-rounded btn-block"
+                id="submitBtn"
+            >
+                Place order
+            </button>
+            </div>
+        </form>
         </div>
-
-        <!-- form buttons -->
-        <div id="button-align">
-          <!-- Reset button -->
-          <button
-            type="reset"
-            class="btn btn-primary btn-rounded btn-block"
-            id="resetBtn"
-          >
-            Reset
-          </button>
-          <!-- Submit button changed type from button to submit -->
-          <button
-            type="button"
-            class="btn btn-primary btn-rounded btn-block"
-            id="submitBtn"
-          >
-            Place order
-          </button>
-        </div>
-      </form>
-    </div>
-    <div
+        <div
       class="card text-center"
       style="margin: auto; width: 40rem; margin-top: 40px"
     >

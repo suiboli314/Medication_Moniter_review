@@ -1,4 +1,4 @@
-// Aaron
+// Aaron Leung - Refill (frontend)
 const submitBtn = document.getElementById("submitBtn")
 const resetBtn = document.getElementById("resetBtn")
 const type = document.getElementById("selectType")
@@ -21,7 +21,7 @@ document.getElementById("typeError2").style.fontSize = "small"
 document.getElementById("typeError3").style.fontSize = "small"
 document.getElementById("typeError4").style.fontSize = "small"
 
-// function is called when submit button is clicked
+// function is called when submit button is clicked (Aaron Leung)
 submitBtn.onclick = async function test() {
     // store input data into data
     const data = {
@@ -50,9 +50,9 @@ submitBtn.onclick = async function test() {
         typeError2.innerHTML = "Field cannot be empty!"
     } else if (!typeCheck) {
         typeError1.innerHTML = "Please select id or name"
-    } else if (valueId.value <= 0 || valueId.value == null) {
+    } else if (valueId.value.length === 0) {
         typeError3.innerHTML = "Invalid value!"
-    } else if (quantity.value <= 0 || quantity.value == null) {
+    } else if (quantity.value.length <= 0 || quantity.value === null) {
         typeError4.innerHTML =
             "Invalid value!  Value has to be a positive integer."
     } else {
@@ -74,7 +74,10 @@ submitBtn.onclick = async function test() {
             // store response json into result
             // display message
             let result = await medData.json()
-            notification.innerHTML =
+            if(result.medication === null) {
+                notification.innerHTML = result.message
+            } else {
+                notification.innerHTML =
                 result.message +
                 "<br>" +
                 "<br>" +
@@ -86,6 +89,7 @@ submitBtn.onclick = async function test() {
                 "<br>" +
                 "Current stock: " +
                 JSON.stringify(result.medication.stock)
+            }
         }
     }
 }

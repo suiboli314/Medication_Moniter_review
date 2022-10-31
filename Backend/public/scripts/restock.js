@@ -1,4 +1,4 @@
-// Aaron
+// Aaron Leung - Restock (frontend)
 const submitBtn2 = document.getElementById("submitBtn2")
 const resetBtn2 = document.getElementById("resetBtn2")
 const valueName = document.getElementById("medicationName")
@@ -21,7 +21,7 @@ document.getElementById("typeErrorB").style.fontSize = "small"
 document.getElementById("typeErrorC").style.fontSize = "small"
 document.getElementById("typeErrorD").style.fontSize = "small"
 
-// function is called when submit button is clicked
+// function is called when submit button is clicked (Aaron Leung)
 submitBtn2.onclick = async function test() {
     // store input data into data
     const data = {
@@ -35,8 +35,8 @@ submitBtn2.onclick = async function test() {
     // before sending input to backend
     if (valueName.value.length === 0) {
         typeErrorA.innerHTML = "Field cannot be empty!"
-    } else if (valueId.value <= 0 || valueId.value == null) {
-        typeErrorB.innerHTML = "Invalid value!"
+    } else if (valueId.value.length === 0) {
+        typeErrorB.innerHTML = "Field cannot be empty!"
     } else if (manufacture.value.length === 0) {
         typeErrorC.innerHTML = "Field cannot be empty!"
     } else if (quantity.value <= 0 || quantity.value == null) {

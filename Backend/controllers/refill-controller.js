@@ -1,24 +1,19 @@
-// refill order for patients
-// const queryControllers = require("./query-controllers")
+// Aaron Leung - refill order for patients
 const mongoUtil = require("../mongoUtil")
 
 const prescriptionOrder = async (req, res) => {
-    // Want to take in id or name, and quantity required
-    // const { type, value, quantity } = req.body
+    // Extract input and store into variables
     const { type, name, id, quantity } = req.body
-    console.log(req.body)
-    // console.log(type, value, quantity)
     const database = mongoUtil.getDB()
     let query
-    // need to make sure first field is specified
+    
+    // Check if type is "id" or "name".  If type is "id" set query to id value input.
+    // Otherwise set query to name value input
     if (type === "id") {
         query = { id: id }
     } else {
         query = { name: name }
     }
-
-    // const medications = await database.collection("medications")
-    // let medication = await medications.findOne(query)
 
     // check if medication exists
     try {
@@ -27,17 +22,13 @@ const prescriptionOrder = async (req, res) => {
 
         if (!medication) {
             console.log("Can't find medication in database")
-            // throw new Error("Can't find medication in database")
             res.json({
                 message: "Can't find medication in database!",
                 medication: medication,
             })
-            // can remove return if we put line 55 into line 54
             return
         } else if (quantity > medication.stock) {
             console.log("Not enough medication in stock!")
-            // res.status(500).json({msg: "Not enough medication in stock!"})
-            // throw new Error("Not enough medication in stock!")
             res.json({
                 message: "Not enough medication in stock!",
                 medication: medication,

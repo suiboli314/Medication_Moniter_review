@@ -60,7 +60,6 @@
                         type="text"
                         placeholder="aspirin"
                         id="medicationName"
-                        required="true"
                     />
                     <div id="typeErrorA"></div>
                 </div>
@@ -69,10 +68,8 @@
                 <div class="form-control">
                     <label>Medication ID</label
                     ><input
-                        type="number"
-                        placeholder="1234567"
+                        type="text"
                         id="medicationId"
-                        required="true"
                     />
                     <div id="typeErrorB"></div>
                 </div>
@@ -80,7 +77,7 @@
                 <!-- Manufacturer -->
                 <div class="form-control">
                     <label>Manufacturer</label
-                    ><input type="text" id="manufacture" required="true" />
+                    ><input type="text" id="manufacture" />
                     <div id="typeErrorC"></div>
                 </div>
 
@@ -90,8 +87,6 @@
                     ><input
                         type="number"
                         id="quantity"
-                        required="true"
-                        min="1"
                     />
                     <div id="typeErrorD"></div>
                 </div>
@@ -106,7 +101,6 @@
                     >
                         Reset
                     </button>
-                    <!-- Submit button (changed type from button to submit: submit sends twice, need to find way to validate) -->
                     <button
                         type="button"
                         class="btn btn-primary btn-rounded btn-block"

@@ -1,18 +1,16 @@
-// restock inventory when medication is low
-// const queryControllers = require("./query-controllers")
+// Aaron Leung - restock inventory when medication is low
 const mongoUtil = require("../mongoUtil")
 
 const restockOrder = async (req, res) => {
-    // Want to take in id or name, and quantity required
+    // Extract input and store into variables
     const { id, name, manufactor, quantity } = req.body
     const database = mongoUtil.getDB()
     const query = { id: id }
 
     let medications = await database.collection("medications")
     let medication = await medications.findOne(query)
-    console.log(medication)
-    console.log("xyz123")
-    //if medication is not in database -> insert
+
+    //if medication is not in database, insert into database
     if (!medication) {
         const doc = { id, name, manufactor, stock: +quantity }
         await medications.insertOne(doc)
@@ -35,9 +33,6 @@ const restockOrder = async (req, res) => {
             medication: medication,
         })
     }
-    // medication = await medications.findOne(query)
-    // let updatedMedication = await medications.findOne(query)
-    // console.log(query)
 }
 
 exports.restockOrder = restockOrder

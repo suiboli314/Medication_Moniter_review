@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,70 +45,69 @@
         </button>
       </div>
     </nav>
-    <div class="container">
-      <div class="header">
-        <h1>Restock Form</h1>
-      </div>
-      <!--removed id="restockform -->
-      <form action="/restock" method="post" class="form">
-        <!-- medication name -->
-        <div class="form-control">
-          <label>Medication Name</label
-          ><input
-            type="text"
-            placeholder="aspirin"
-            id="medicationName"
-            required="true"
-          />
-          <div id="typeErrorA"></div>
-        </div>
+        <div class="container">
+            <div class="header">
+                <h1>Restock Form</h1>
+            </div>
+            <!--removed id="restockform -->
+            <form action="/restock" method="post" class="form">
+                <!-- medication name -->
+                <div class="form-control">
+                    <label>Medication Name</label
+                    ><input
+                        type="text"
+                        placeholder="aspirin"
+                        id="medicationName"
+                    />
+                    <div id="typeErrorA"></div>
+                </div>
 
-        <!-- medication id -->
-        <div class="form-control">
-          <label>Medication ID</label
-          ><input
-            type="number"
-            placeholder="1234567"
-            id="medicationId"
-            required="true"
-          />
-          <div id="typeErrorB"></div>
-        </div>
+                <!-- medication id -->
+                <div class="form-control">
+                    <label>Medication ID</label
+                    ><input
+                        type="text"
+                        id="medicationId"
+                    />
+                    <div id="typeErrorB"></div>
+                </div>
 
-        <!-- Manufacturer -->
-        <div class="form-control">
-          <label>Manufacturer</label
-          ><input type="text" id="manufacture" required="true" />
-          <div id="typeErrorC"></div>
-        </div>
+                <!-- Manufacturer -->
+                <div class="form-control">
+                    <label>Manufacturer</label
+                    ><input type="text" id="manufacture" />
+                    <div id="typeErrorC"></div>
+                </div>
 
-        <!-- quantity -->
-        <div class="form-control">
-          <label>Quantity</label
-          ><input type="number" id="quantity" required="true" min="1" />
-          <div id="typeErrorD"></div>
-        </div>
+                <!-- quantity -->
+                <div class="form-control">
+                    <label>Quantity</label
+                    ><input
+                        type="number"
+                        id="quantity"
+                    />
+                    <div id="typeErrorD"></div>
+                </div>
 
-        <!-- form buttons -->
-        <div id="button-align">
-          <!-- Reset button -->
-          <button
-            type="reset"
-            class="btn btn-primary btn-rounded btn-block"
-            id="resetBtn2"
-          >
-            Reset
-          </button>
-          <!-- Submit button (changed type from button to submit: submit sends twice, need to find way to validate) -->
-          <button
-            type="button"
-            class="btn btn-primary btn-rounded btn-block"
-            id="submitBtn2"
-          >
-            Place order
-          </button>
-        </div>
-      </form>
+                <!-- form buttons -->
+                <div id="button-align">
+                    <!-- Reset button -->
+                    <button
+                        type="reset"
+                        class="btn btn-primary btn-rounded btn-block"
+                        id="resetBtn2"
+                    >
+                        Reset
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary btn-rounded btn-block"
+                        id="submitBtn2"
+                    >
+                        Place order
+                    </button>
+                </div>
+            </form>
     </div>
     <div
       class="card text-center"

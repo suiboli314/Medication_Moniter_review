@@ -1,15 +1,15 @@
-// Aaron
-const submitBtn2 = document.getElementById("submitBtn2");
-const resetBtn2 = document.getElementById("resetBtn2");
-const valueName = document.getElementById("medicationName");
-const valueId = document.getElementById("medicationId");
-const quantity = document.getElementById("quantity");
-const manufacture = document.getElementById("manufacture");
-const notification = document.getElementById("notification");
-const typeErrorA = document.getElementById("typeErrorA");
-const typeErrorB = document.getElementById("typeErrorB");
-const typeErrorC = document.getElementById("typeErrorC");
-const typeErrorD = document.getElementById("typeErrorD");
+// Aaron Leung - Restock (frontend)
+const submitBtn2 = document.getElementById("submitBtn2")
+const resetBtn2 = document.getElementById("resetBtn2")
+const valueName = document.getElementById("medicationName")
+const valueId = document.getElementById("medicationId")
+const quantity = document.getElementById("quantity")
+const manufacture = document.getElementById("manufacture")
+const notification = document.getElementById("notification")
+const typeErrorA = document.getElementById("typeErrorA")
+const typeErrorB = document.getElementById("typeErrorB")
+const typeErrorC = document.getElementById("typeErrorC")
+const typeErrorD = document.getElementById("typeErrorD")
 
 // Error message color and fontsize
 document.getElementById("typeErrorA").style.color = "red";
@@ -29,7 +29,7 @@ const checkLogin = async () => {
   }
 };
 
-// function is called when submit button is clicked
+// function is called when submit button is clicked (Aaron Leung)
 submitBtn2.onclick = async function test() {
   // store input data into data
   const data = {
@@ -39,31 +39,31 @@ submitBtn2.onclick = async function test() {
     quantity: quantity.value,
   };
 
-  // various checks to see if input fields of form are valid
-  // before sending input to backend
-  if (valueName.value.length === 0) {
-    typeErrorA.innerHTML = "Field cannot be empty!";
-  } else if (valueId.value <= 0 || valueId.value == null) {
-    typeErrorB.innerHTML = "Invalid value!";
-  } else if (manufacture.value.length === 0) {
-    typeErrorC.innerHTML = "Field cannot be empty!";
-  } else if (quantity.value <= 0 || quantity.value == null) {
-    typeErrorD.innerHTML = "Invalid value!";
-  } else {
-    let medData = await fetch("/restock", {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    // check whether response is successful
-    if (medData.ok) {
-      // Remove error messages when displaying feedback message
-      typeErrorA.innerHTML = "";
-      typeErrorB.innerHTML = "";
-      typeErrorC.innerHTML = "";
-      typeErrorD.innerHTML = "";
+    // various checks to see if input fields of form are valid
+    // before sending input to backend
+    if (valueName.value.length === 0) {
+        typeErrorA.innerHTML = "Field cannot be empty!"
+    } else if (valueId.value.length === 0) {
+        typeErrorB.innerHTML = "Field cannot be empty!"
+    } else if (manufacture.value.length === 0) {
+        typeErrorC.innerHTML = "Field cannot be empty!"
+    } else if (quantity.value <= 0 || quantity.value === null) {
+        typeErrorD.innerHTML = "Invalid value!"
+    } else {
+        let medData = await fetch("/restock", {
+            method: "POST", // or 'PUT'
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        // check whether response is successful
+        if (medData.ok) {
+            // Remove error messages when displaying feedback message
+            typeErrorA.innerHTML = ""
+            typeErrorB.innerHTML = ""
+            typeErrorC.innerHTML = ""
+            typeErrorD.innerHTML = ""
 
       // store response json into result
       // display message

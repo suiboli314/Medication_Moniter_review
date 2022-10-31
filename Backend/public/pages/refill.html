@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,36 +45,42 @@
         </button>
       </div>
     </nav>
-    <div class="container">
-      <div class="header">
-        <h1>Refill Form</h1>
-      </div>
-      <!-- removed id="refillform" attribute-->
-      <form action="/refill" method="post" class="form">
-        <!-- Type -->
-        <div class="form-control">
-          <label>Select ID or Name</label
-          ><input
-            type="text"
-            placeholder="Type either id or name"
-            id="selectType"
-          />
-          <div id="typeError1"></div>
-        </div>
+        <div class="container">
+            <div class="header">
+                <h1>Refill Form</h1>
+            </div>
+            <form action="/refill" method="post" class="form">
+                <!-- Type -->
+                <div class="form-control">
+                    <label>Select ID or Name</label
+                    ><input
+                        type="text"
+                        placeholder="Type either id or name"
+                        id="selectType"
+                    />
+                    <div id="typeError1"></div>
+                </div>
 
-        <!-- medication name -->
-        <div class="form-control">
-          <label>Medication Name</label>
-          <input type="text" placeholder="aspirin" id="medicationName" />
-          <div id="typeError2"></div>
-        </div>
+                <!-- medication name -->
+                <div class="form-control">
+                    <label>Medication Name</label>
+                    <input
+                        type="text"
+                        placeholder="aspirin"
+                        id="medicationName"
+                    />
+                    <div id="typeError2"></div>
+                </div>
 
-        <!-- medication id -->
-        <div class="form-control">
-          <label>Medication ID</label
-          ><input type="number" placeholder="1234567" id="medicationId" />
-          <div id="typeError3"></div>
-        </div>
+                <!-- medication id -->
+                <div class="form-control">
+                    <label>Medication ID</label
+                    ><input
+                        type="text"
+                        id="medicationId"
+                    />
+                    <div id="typeError3"></div>
+                </div>
 
         <!-- quantity -->
         <div class="form-control">

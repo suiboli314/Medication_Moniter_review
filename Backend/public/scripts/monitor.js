@@ -1,4 +1,18 @@
 const lowStockItems = document.getElementById("lowStockItems");
+const refillLink = document.getElementById("refillLink");
+const restockLink = document.getElementById("restockLink");
+const loginLink = document.getElementById("loginLink");
+
+const checkLogin = async () => {
+  const isLoggedInRaw = await fetch("/login");
+  const isLoggedIn = await isLoggedInRaw.json();
+  if (isLoggedIn.isLoggedIn) {
+    loginLink.style.display = "none";
+  } else {
+    refillLink.style.display = "none";
+    restockLink.style.display = "none";
+  }
+};
 
 // getItems fetches the low stock items from the route "./moniter"
 //Yao Zhong
@@ -22,4 +36,5 @@ const makeItemCard = (item) => {
   lowStockItems.appendChild(listItem);
 };
 
+checkLogin();
 getItems();

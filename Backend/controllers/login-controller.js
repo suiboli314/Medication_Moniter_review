@@ -1,31 +1,34 @@
-const mongoUtil = require("../mongoUtil")
+const mongoUtil = require("../mongoUtil");
+
+let isLoggedIn = false;
 
 const authenticateUser = async (req, res) => {
-    const { user, password } = req.body
-    const database = mongoUtil.getDB()
+  const { username, password } = req.body;
+  const database = mongoUtil.getDB();
 
-    // store user input into variables
-    let query
-    query = { user: user }
-    let userPassword
-    userPassword = { password: password }
+  // query inside users collection
+  let user;
+  try {
+    user = await database.collection("users").findOne({ username: username });
+  } catch (err) {
+    res.status(500).send({ msg: err });
+  }
 
-    // query inside users collection
-    const users = await database.collection("users")
-    let username = await users.findOne(query)
+  let message;
+  if (!user || user.password !== password) {
+    isLoggedIn = false;
+    message = "Wrong credentials, please check your username or password!";
+  } else {
+    isLoggedIn = true;
+    message = "Login Success!";
+  }
 
-    if (!username) {
-        console.log("Can't find username in database")
-        res.json({
-            message: "Username not in database!",
-        })
-        return
-    } else if (username.password != userPassword) {
-        res.json({
-            message: "Username and password do not match!",
-        })
-    }
-    // else redirect to page?
-}
+  res.json({ isLoggedIn: isLoggedIn, message: message });
+};
 
-exports.authenticateUser = authenticateUser
+const loginStatus = (req, res) => {
+  res.json({ isLoggedIn: isLoggedIn });
+};
+
+exports.authenticateUser = authenticateUser;
+exports.loginStatus = loginStatus;

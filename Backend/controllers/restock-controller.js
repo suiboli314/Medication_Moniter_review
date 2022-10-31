@@ -1,9 +1,8 @@
-// Restock controller to retock medications that are low in stock
-// Aaron Leung
+// Aaron Leung - restock inventory when medication is low
 const mongoUtil = require("../mongoUtil")
 
 const restockOrder = async (req, res) => {
-    // Extract user inputs and store into the following variables
+    // Extract input and store into variables
     const { id, name, manufactor, quantity } = req.body
     const database = mongoUtil.getDB()
     const query = { id: id }

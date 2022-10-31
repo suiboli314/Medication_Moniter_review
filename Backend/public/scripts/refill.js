@@ -13,35 +13,43 @@ const typeError3 = document.getElementById("typeError3")
 const typeError4 = document.getElementById("typeError4")
 
 // Error message color and fontsize
-document.getElementById("typeError1").style.color = "red"
-document.getElementById("typeError2").style.color = "red"
-document.getElementById("typeError3").style.color = "red"
-document.getElementById("typeError4").style.color = "red"
-document.getElementById("typeError1").style.fontSize = "small"
-document.getElementById("typeError2").style.fontSize = "small"
-document.getElementById("typeError3").style.fontSize = "small"
-document.getElementById("typeError4").style.fontSize = "small"
+document.getElementById("typeError1").style.color = "red";
+document.getElementById("typeError2").style.color = "red";
+document.getElementById("typeError3").style.color = "red";
+document.getElementById("typeError4").style.color = "red";
+document.getElementById("typeError1").style.fontSize = "small";
+document.getElementById("typeError2").style.fontSize = "small";
+document.getElementById("typeError3").style.fontSize = "small";
+document.getElementById("typeError4").style.fontSize = "small";
 
-// function is called when submit button is clicked
+const checkLogin = async () => {
+  const isLoggedInRaw = await fetch("/login");
+  const isLoggedIn = await isLoggedInRaw.json();
+  if (!isLoggedIn.isLoggedIn) {
+    window.location.replace("/pages/login.html");
+  }
+};
+
+// function is called when submit button is clicked (Aaron Leung)
 submitBtn.onclick = async function test() {
-    // store input data into data
-    const data = {
-        type: type.value,
-        name: valueName.value,
-        id: valueId.value,
-        quantity: quantity.value,
-    }
+  // store input data into data
+  const data = {
+    type: type.value,
+    name: valueName.value,
+    id: valueId.value,
+    quantity: quantity.value,
+  };
 
-    // Check if the input of the first field is either "name" or "id"
-    // Store result into typeCheck
-    let typeCheck
-    if (type.value == "name") {
-        typeCheck = true
-    } else if (type.value == "id") {
-        typeCheck = true
-    } else {
-        typeCheck = false
-    }
+  // Check if the input of the first field is either "name" or "id"
+  // Store result into typeCheck
+  let typeCheck;
+  if (type.value == "name") {
+    typeCheck = true;
+  } else if (type.value == "id") {
+    typeCheck = true;
+  } else {
+    typeCheck = false;
+  }
 
     // various checks to see if input fields of form are valid
     // before sending input to backend
@@ -75,8 +83,7 @@ submitBtn.onclick = async function test() {
             // store response json into result
             // display message
             let result = await medData.json()
-            console.log(result)
-            if (result.medication === null) {
+            if(result.medication === null) {
                 notification.innerHTML = result.message
             } else {
                 notification.innerHTML =
@@ -92,27 +99,19 @@ submitBtn.onclick = async function test() {
                 "Current stock: " +
                 JSON.stringify(result.medication.stock)
             }
-            // notification.innerHTML =
-            //     result.message +
-            //     "<br>" +
-            //     "<br>" +
-            //     "Medication: " +
-            //     JSON.stringify(result.medication.name) +
-            //     "<br>" +
-            //     "Medication Id: " +
-            //     JSON.stringify(result.medication.id) +
-            //     "<br>" +
-            //     "Current stock: " +
-            //     JSON.stringify(result.medication.stock)
         }
+
     }
-}
+  };
+
 
 // clears all error messages and notification
 resetBtn.onclick = function () {
-    notification.innerHTML = ""
-    typeError1.innerHTML = ""
-    typeError2.innerHTML = ""
-    typeError3.innerHTML = ""
-    typeError4.innerHTML = ""
-}
+  notification.innerHTML = "";
+  typeError1.innerHTML = "";
+  typeError2.innerHTML = "";
+  typeError3.innerHTML = "";
+  typeError4.innerHTML = "";
+};
+
+checkLogin();

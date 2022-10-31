@@ -1,9 +1,8 @@
-// Refill controller to order medications for patients
-// Aaron Leung
+// Aaron Leung - refill order for patients
 const mongoUtil = require("../mongoUtil")
 
 const prescriptionOrder = async (req, res) => {
-    // Extract user inputs and store into the following variables
+    // Extract input and store into variables
     const { type, name, id, quantity } = req.body
     const database = mongoUtil.getDB()
     let query

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "initdb": "mongoimport -d Medication_Monitor -c medications --jsonArray --file ./data/MOCK_DATA.json"
+    "initdb": "mongoimport -d Medication_Monitor -c medications --jsonArray --file ./data/MOCK_DATA.json",
+    "inituser": "mongoimport -d Medication_Monitor -c users --jsonArray --file ./data/MOCK_USER.json"
   },
   "author": "Yao Zhong, Aaron Leung",
   "license": "MIT",

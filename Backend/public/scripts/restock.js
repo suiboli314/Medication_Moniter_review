@@ -13,24 +13,32 @@ const typeErrorC = document.getElementById("typeErrorC")
 const typeErrorD = document.getElementById("typeErrorD")
 
 // Error message color and fontsize
-document.getElementById("typeErrorA").style.color = "red"
-document.getElementById("typeErrorB").style.color = "red"
-document.getElementById("typeErrorC").style.color = "red"
-document.getElementById("typeErrorD").style.color = "red"
-document.getElementById("typeErrorA").style.fontSize = "small"
-document.getElementById("typeErrorB").style.fontSize = "small"
-document.getElementById("typeErrorC").style.fontSize = "small"
-document.getElementById("typeErrorD").style.fontSize = "small"
+document.getElementById("typeErrorA").style.color = "red";
+document.getElementById("typeErrorB").style.color = "red";
+document.getElementById("typeErrorC").style.color = "red";
+document.getElementById("typeErrorD").style.color = "red";
+document.getElementById("typeErrorA").style.fontSize = "small";
+document.getElementById("typeErrorB").style.fontSize = "small";
+document.getElementById("typeErrorC").style.fontSize = "small";
+document.getElementById("typeErrorD").style.fontSize = "small";
 
-// function is called when submit button is clicked
+const checkLogin = async () => {
+  const isLoggedInRaw = await fetch("/login");
+  const isLoggedIn = await isLoggedInRaw.json();
+  if (!isLoggedIn.isLoggedIn) {
+    window.location.replace("/pages/login.html");
+  }
+};
+
+// function is called when submit button is clicked (Aaron Leung)
 submitBtn2.onclick = async function test() {
-    // store input data into data
-    const data = {
-        name: valueName.value,
-        id: valueId.value,
-        manufactor: manufacture.value,
-        quantity: quantity.value,
-    }
+  // store input data into data
+  const data = {
+    name: valueName.value,
+    id: valueId.value,
+    manufactor: manufacture.value,
+    quantity: quantity.value,
+  };
 
     // various checks to see if input fields of form are valid
     // before sending input to backend
@@ -40,7 +48,7 @@ submitBtn2.onclick = async function test() {
         typeErrorB.innerHTML = "Field cannot be empty!"
     } else if (manufacture.value.length === 0) {
         typeErrorC.innerHTML = "Field cannot be empty!"
-    } else if (quantity.value <= 0 || quantity.value == null) {
+    } else if (quantity.value <= 0 || quantity.value === null) {
         typeErrorD.innerHTML = "Invalid value!"
     } else {
         let medData = await fetch("/restock", {
@@ -58,30 +66,32 @@ submitBtn2.onclick = async function test() {
             typeErrorC.innerHTML = ""
             typeErrorD.innerHTML = ""
 
-            // store response json into result
-            // display message
-            let result = await medData.json()
-            notification.innerHTML =
-                result.message +
-                "<br>" +
-                "<br>" +
-                "Medication: " +
-                JSON.stringify(result.medication.name) +
-                "<br>" +
-                "Medication Id: " +
-                JSON.stringify(result.medication.id) +
-                "<br>" +
-                "Updated stock: " +
-                JSON.stringify(result.medication.stock)
-        }
+      // store response json into result
+      // display message
+      let result = await medData.json();
+      notification.innerHTML =
+        result.message +
+        "<br>" +
+        "<br>" +
+        "Medication: " +
+        JSON.stringify(result.medication.name) +
+        "<br>" +
+        "Medication Id: " +
+        JSON.stringify(result.medication.id) +
+        "<br>" +
+        "Updated stock: " +
+        JSON.stringify(result.medication.stock);
     }
-}
+  }
+};
 
 // clears all error messages and notification
 resetBtn2.onclick = function () {
-    notification.innerHTML = ""
-    typeErrorA.innerHTML = ""
-    typeErrorB.innerHTML = ""
-    typeErrorC.innerHTML = ""
-    typeErrorD.innerHTML = ""
-}
+  notification.innerHTML = "";
+  typeErrorA.innerHTML = "";
+  typeErrorB.innerHTML = "";
+  typeErrorC.innerHTML = "";
+  typeErrorD.innerHTML = "";
+};
+
+checkLogin();

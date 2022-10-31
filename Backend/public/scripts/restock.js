@@ -22,6 +22,7 @@ document.getElementById("typeErrorB").style.fontSize = "small";
 document.getElementById("typeErrorC").style.fontSize = "small";
 document.getElementById("typeErrorD").style.fontSize = "small";
 
+// Yao Zhong - checkLogin
 const checkLogin = async () => {
   const isLoggedInRaw = await fetch("/login");
   const isLoggedIn = await isLoggedInRaw.json();
@@ -52,7 +53,7 @@ submitBtn2.onclick = async function test() {
         typeErrorD.innerHTML = "Invalid value!"
     } else {
         let medData = await fetch("/restock", {
-            method: "POST", // or 'PUT'
+            method: "POST", 
             headers: {
                 "Content-Type": "application/json",
             },
@@ -85,7 +86,7 @@ submitBtn2.onclick = async function test() {
   }
 };
 
-// clears all error messages and notification
+// clears all error messages and notification (Aaron Leung)
 resetBtn2.onclick = function () {
   notification.innerHTML = "";
   typeErrorA.innerHTML = "";

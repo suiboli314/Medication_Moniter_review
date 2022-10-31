@@ -1,3 +1,4 @@
+// Aaron Leung - Login with user collection
 const mongoUtil = require("../mongoUtil");
 
 let isLoggedIn = false;
@@ -14,6 +15,7 @@ const authenticateUser = async (req, res) => {
     res.status(500).send({ msg: err });
   }
 
+  // Yao Zhong
   let message;
   if (!user || user.password !== password) {
     isLoggedIn = false;

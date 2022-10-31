@@ -38,3 +38,5 @@ app.use(express.static("./public"));
 app.listen(port, () => {
   console.log(`Server runing at port ${port}`);
 });
+
+module.exports = app;

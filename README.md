@@ -6,10 +6,23 @@ Medication monitor system that include functionalities such as query medication,
 
 To become familiar with using Node, Node Express, Mongo and HTML5 to build a basic backend application.
 
-![query_page](https://user-images.githubusercontent.com/97815716/199091068-fac5a12a-fe65-441a-80de-9a8739263da6.png)
+Before Login:
+![before_login](https://user-images.githubusercontent.com/97815716/199124524-ab3e05bd-030a-4d1c-ae52-37260804237e.png)
+
+After Login:
+![after_login](https://user-images.githubusercontent.com/97815716/199124580-2809f141-6cfc-42dc-b344-bacf97c2dc16.png)
+
+Login Page:
 ![admin_login](https://user-images.githubusercontent.com/97815716/199090427-47511d44-30b0-4f02-b4a6-82d1d290dd98.png)
+
+Refill Page:
 ![refill_page](https://user-images.githubusercontent.com/97815716/199089687-c2fb1dca-34b0-4314-8c89-2b857a1a164c.png)
+
+Restock Page:
 ![restock_page](https://user-images.githubusercontent.com/97815716/199089870-bf28ab42-a403-454e-a62e-3d153630d6c5.png)
+
+Monitor Dashboard Page:
+![monitor](https://user-images.githubusercontent.com/97815716/199124640-f77b29ef-7fac-4855-a9d7-d65baf91a154.png)
 
 ## Getting Started
 
@@ -48,9 +61,9 @@ To start the project, run
 ## Demonstration and Slides
 
 - Demo video coming soon
-- Slide viedo coming soon
+- Slide video coming soon
 
 ## Reference Link
 
-This project was built as part of CS5610 Web Development course. For more information about the course see the following link.
+This project was built as part of CS5610 Web Development course. For more information about the course see the following link:
 https://johnguerra.co/classes/webDevelopment_fall_2022/

@@ -50,5 +50,5 @@ To start the project, run
 
 ## Reference Link
 
-This project was built as part of CS5610 Web Development course.  For more information about the course see the linked below.
+This project was built as part of CS5610 Web Development course.  For more information about the course see the following link.
 https://johnguerra.co/classes/webDevelopment_fall_2022/ 

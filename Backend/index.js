@@ -12,7 +12,7 @@ const queryRoutes = require("./routes/query-routes");
 const monitorRoutes = require("./routes/monitor-routes");
 const refillRoutes = require("./routes/refill-routes");
 const restockRoutes = require("./routes/restock-routes");
-const loginRoutes = require("./routes/login-routes")
+const loginRoutes = require("./routes/login-routes");
 
 //connect to the database when the project starts
 mongoUtil.connectToClient();
@@ -31,10 +31,9 @@ app.use("/refill", refillRoutes);
 
 app.use("/restock", restockRoutes);
 
+app.use("/login", loginRoutes);
 
-app.use("/login", loginRoutes)
-app.use(express.static("./public"))
-
+app.use(express.static("./public"));
 
 app.listen(port, () => {
   console.log(`Server runing at port ${port}`);

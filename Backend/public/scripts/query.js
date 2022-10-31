@@ -1,8 +1,22 @@
 const resultDisplay = document.getElementById("queryResult");
 const messageDisplay = document.getElementById("queryMessage");
+const refillLink = document.getElementById("refillLink");
+const restockLink = document.getElementById("restockLink");
+const loginLink = document.getElementById("loginLink");
 
 // rendeResult will render the query result for lastQuery on the same page
 //Yao Zhong
+const checkLogin = async () => {
+  const isLoggedInRaw = await fetch("/login");
+  const isLoggedIn = await isLoggedInRaw.json();
+  if (isLoggedIn.isLoggedIn) {
+    loginLink.style.display = "none";
+  } else {
+    refillLink.style.display = "none";
+    restockLink.style.display = "none";
+  }
+};
+
 const renderResult = async () => {
   const resRaw = await fetch("/query/lastQuery");
   const res = await resRaw.json();
@@ -35,4 +49,5 @@ const renderResult = async () => {
   }
 };
 
+checkLogin();
 renderResult();

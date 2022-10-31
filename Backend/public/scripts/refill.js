@@ -1,4 +1,5 @@
-// Aaron
+// Aaron Leung
+// Refill (frontend), displays feedback results to users
 const submitBtn = document.getElementById("submitBtn")
 const resetBtn = document.getElementById("resetBtn")
 const type = document.getElementById("selectType")
@@ -50,8 +51,8 @@ submitBtn.onclick = async function test() {
         typeError2.innerHTML = "Field cannot be empty!"
     } else if (!typeCheck) {
         typeError1.innerHTML = "Please select id or name"
-    } else if (valueId.value <= 0 || valueId.value == null) {
-        typeError3.innerHTML = "Invalid value!"
+    } else if (valueId.value.length === 0) {
+        typeError3.innerHTML = "Invalid value!" 
     } else if (quantity.value <= 0 || quantity.value == null) {
         typeError4.innerHTML =
             "Invalid value!  Value has to be a positive integer."
@@ -74,7 +75,11 @@ submitBtn.onclick = async function test() {
             // store response json into result
             // display message
             let result = await medData.json()
-            notification.innerHTML =
+            console.log(result)
+            if (result.medication === null) {
+                notification.innerHTML = result.message
+            } else {
+                notification.innerHTML =
                 result.message +
                 "<br>" +
                 "<br>" +
@@ -86,6 +91,19 @@ submitBtn.onclick = async function test() {
                 "<br>" +
                 "Current stock: " +
                 JSON.stringify(result.medication.stock)
+            }
+            // notification.innerHTML =
+            //     result.message +
+            //     "<br>" +
+            //     "<br>" +
+            //     "Medication: " +
+            //     JSON.stringify(result.medication.name) +
+            //     "<br>" +
+            //     "Medication Id: " +
+            //     JSON.stringify(result.medication.id) +
+            //     "<br>" +
+            //     "Current stock: " +
+            //     JSON.stringify(result.medication.stock)
         }
     }
 }

@@ -1,4 +1,5 @@
-// Aaron
+// Aaron Leung
+// restock (frontend), displays feedback results to the user
 const submitBtn2 = document.getElementById("submitBtn2")
 const resetBtn2 = document.getElementById("resetBtn2")
 const valueName = document.getElementById("medicationName")
@@ -35,8 +36,8 @@ submitBtn2.onclick = async function test() {
     // before sending input to backend
     if (valueName.value.length === 0) {
         typeErrorA.innerHTML = "Field cannot be empty!"
-    } else if (valueId.value <= 0 || valueId.value == null) {
-        typeErrorB.innerHTML = "Invalid value!"
+    } else if (valueId.value.length === 0) {
+        typeErrorB.innerHTML = "Field cannot be empty!"
     } else if (manufacture.value.length === 0) {
         typeErrorC.innerHTML = "Field cannot be empty!"
     } else if (quantity.value <= 0 || quantity.value == null) {

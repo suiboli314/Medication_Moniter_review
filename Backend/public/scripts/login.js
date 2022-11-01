@@ -21,13 +21,14 @@ loginBtn.onclick = async function test() {
     passwordError.innerHTML = "Field cannot be empty";
   } else {
     let userData = await fetch("/login", {
-      method: "POST", 
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
     // check whether response is successful
+    // Yao Zhong
     if (userData.ok) {
       const res = await userData.json();
       if (res.isLoggedIn) {

@@ -1,3 +1,4 @@
+//Yao Zhong
 const resultDisplay = document.getElementById("queryResult");
 const messageDisplay = document.getElementById("queryMessage");
 const refillLink = document.getElementById("refillLink");

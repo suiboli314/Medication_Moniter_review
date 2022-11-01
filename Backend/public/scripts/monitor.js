@@ -1,3 +1,4 @@
+// Yao Zhong
 const lowStockItems = document.getElementById("lowStockItems");
 const refillLink = document.getElementById("refillLink");
 const restockLink = document.getElementById("restockLink");

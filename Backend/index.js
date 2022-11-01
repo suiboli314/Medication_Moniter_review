@@ -25,7 +25,7 @@ app.use(express.static("./public"));
 
 app.use("/query", queryRoutes);
 
-app.use("/monitor", monitorRoutes);
+app.use("/api/monitor", monitorRoutes);
 
 app.use("/refill", refillRoutes);
 

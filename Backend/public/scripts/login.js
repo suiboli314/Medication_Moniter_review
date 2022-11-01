@@ -27,6 +27,7 @@ loginBtn.onclick = async function test() {
       },
       body: JSON.stringify(data),
     });
+
     // check login status and if logged in, redirect
     // Yao Zhong
     if (userData.ok) {

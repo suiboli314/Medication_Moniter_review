@@ -1,5 +1,8 @@
 //Yao Zhong
 
+//vercel deployment configuration considered https://github.com/ngduc/vercel-express/blob/master/vercel.json
+// but made a lot of resaerch to make it finally work.
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoUtil = require("./mongoUtil");

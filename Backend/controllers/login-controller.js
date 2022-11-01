@@ -28,6 +28,7 @@ const authenticateUser = async (req, res) => {
   res.json({ isLoggedIn: isLoggedIn, message: message });
 };
 
+// Yao Zhong
 const loginStatus = (req, res) => {
   res.json({ isLoggedIn: isLoggedIn });
 };

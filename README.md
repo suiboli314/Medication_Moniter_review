@@ -61,7 +61,7 @@ To start the project, run
 ## Demonstration and Slides
 
 - Demo video coming soon
-- Slide video coming soon
+- Slides: https://docs.google.com/presentation/d/15INArof-dp_fsjPk-7nUxVTfoAkO5jcRiVzbm7m0HIU/edit?usp=sharing
 
 ## Reference Link
 

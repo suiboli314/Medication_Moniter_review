@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.sendFile("./public/index.html", { root: __dirname });
 });
 
 app.use(express.static("./public"));

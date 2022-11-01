@@ -53,11 +53,11 @@ To start the project, run
      npm start
 ```
 
-## Authors and Homepage Link
+## Authors and Project Link
 
 - Yao Zhong
 - Aaron Leung
-- Homepage Link coming soon
+- Project URL: https://medication-moniter.vercel.app/
 
 ## Demonstration and Slides
 

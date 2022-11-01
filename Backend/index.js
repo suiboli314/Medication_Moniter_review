@@ -21,10 +21,6 @@ mongoUtil.connectToClient();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.sendFile("./public/index.html", { root: __dirname });
-});
-
 app.use(express.static("./public"));
 
 app.use("/query", queryRoutes);

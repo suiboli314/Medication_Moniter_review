@@ -23,15 +23,15 @@ app.use(bodyParser.json());
 
 app.use(express.static("./public"));
 
-app.use("/query", queryRoutes);
+app.use("/api/query", queryRoutes);
 
 app.use("/api/monitor", monitorRoutes);
 
-app.use("/refill", refillRoutes);
+app.use("/api/refill", refillRoutes);
 
-app.use("/restock", restockRoutes);
+app.use("/api/restock", restockRoutes);
 
-app.use("/login", loginRoutes);
+app.use("/api/login", loginRoutes);
 
 app.use(express.static("./public"));
 

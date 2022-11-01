@@ -5,7 +5,7 @@ const restockLink = document.getElementById("restockLink");
 const loginLink = document.getElementById("loginLink");
 
 const checkLogin = async () => {
-  const isLoggedInRaw = await fetch("/login");
+  const isLoggedInRaw = await fetch("/api/login");
   const isLoggedIn = await isLoggedInRaw.json();
   if (isLoggedIn.isLoggedIn) {
     loginLink.style.display = "none";
@@ -18,7 +18,7 @@ const checkLogin = async () => {
 // getItems fetches the low stock items from the route "./moniter"
 //Yao Zhong
 const getItems = async () => {
-  const res = await (await fetch("/monitor")).json();
+  const res = await (await fetch("/api/monitor")).json();
   res.lowStock.forEach((element) => {
     makeItemCard(element);
   });

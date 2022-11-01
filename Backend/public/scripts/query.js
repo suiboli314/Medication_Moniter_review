@@ -8,7 +8,7 @@ const loginLink = document.getElementById("loginLink");
 // rendeResult will render the query result for lastQuery on the same page
 //Yao Zhong
 const checkLogin = async () => {
-  const isLoggedInRaw = await fetch("/login");
+  const isLoggedInRaw = await fetch("/api/login");
   const isLoggedIn = await isLoggedInRaw.json();
   if (isLoggedIn.isLoggedIn) {
     loginLink.style.display = "none";
@@ -19,7 +19,7 @@ const checkLogin = async () => {
 };
 
 const renderResult = async () => {
-  const resRaw = await fetch("/query/lastQuery");
+  const resRaw = await fetch("/api/query/lastQuery");
   const res = await resRaw.json();
 
   if (!res.message) {

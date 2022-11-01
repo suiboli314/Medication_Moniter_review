@@ -57,10 +57,11 @@ To start the project, run
 
 - Yao Zhong
 - Aaron Leung
+- Homepage Link coming soon
 
 ## Demonstration and Slides
 
-- Demo video coming soon
+- Demo video: https://www.youtube.com/watch?v=q-lqb5L1008
 - Slides: https://docs.google.com/presentation/d/15INArof-dp_fsjPk-7nUxVTfoAkO5jcRiVzbm7m0HIU/edit?usp=sharing
 
 ## Reference Link
